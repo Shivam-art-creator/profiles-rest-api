@@ -5,6 +5,8 @@ from rest_framework import  status
 from rest_framework import viewsets
 from rest_framework.authentication import TokenAuthentication
 from rest_framework import filters
+from rest_framework.authtoken.views import ObtainAuthToken
+from rest_framework.settings import api_settings
 
 from profiles_api import serializers
 from profiles_api import models
@@ -123,6 +125,15 @@ class UserProfileViewSet(viewsets.ModelViewSet):
 
     # Define the fields used for search filtering
     search_fields = ('name', 'email',)
+
+
+
+class UserLoginApiView(ObtainAuthToken):
+    """Handle creating user authentication tokens"""
+
+    # Specify the renderer classes for this view
+    # Renderers determine how the response data is formatted
+    renderer_classes = api_settings.DEFAULT_RENDERER_CLASSES
 
 
 

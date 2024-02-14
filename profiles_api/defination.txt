@@ -100,3 +100,20 @@ Here's a detailed explanation of `ViewSets` in DRF:
    `ViewSets` can be customized and extended to suit your specific requirements. You can override the default behavior of CRUD operations, add custom actions to your `ViewSet`, or define additional methods to handle specific business logic. This flexibility allows you to build APIs that meet the unique needs of your application.
 
 Overall, `ViewSets` provide a convenient and efficient way to build RESTful APIs in Django applications, allowing you to organize your code, promote code reusability, and handle common CRUD operations with ease. By leveraging the capabilities of `ViewSets` and other components provided by DRF, developers can create robust and scalable APIs that meet the demands of modern web applications.
+
+
+
+#   ----------------------------------------------------------  Imports:  --------------------------------------------
+
+We import ObtainAuthToken from rest_framework.authtoken.views, which is a view provided by Django REST Framework for obtaining authentication tokens.
+We import api_settings from rest_framework.settings, which allows us to access the default settings of Django REST Framework.
+Class Definition:
+
+We define a class named UserLoginApiView which inherits from ObtainAuthToken. This means that our view will handle the process of obtaining authentication tokens.
+We provide a docstring to describe the purpose of the class, which is to handle creating user authentication tokens.
+Renderer Classes:
+
+renderer_classes = api_settings.DEFAULT_RENDERER_CLASSES: This line specifies the renderer classes used for this view.
+Renderers determine how the response data will be formatted when the view returns a response.
+api_settings.DEFAULT_RENDERER_CLASSES provides the default renderer classes defined in the Django REST Framework settings.
+By specifying the renderer_classes, we ensure that when the UserLoginApiView returns a response, it will be formatted according to the default renderer classes defined in the Django REST Framework settings. This ensures consistency in the response format across different views in the application.
