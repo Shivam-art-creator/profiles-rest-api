@@ -9,6 +9,8 @@ router = DefaultRouter()
 
 # Register the HelloViewSet with the router
 router.register('hello-viewset', views.HelloViewSet, basename='hello-viewset')
+router.register('profile',views.UserProfileViewSet)
+
 
 # Define urlpatterns for your Django application
 urlpatterns = [
